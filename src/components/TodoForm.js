@@ -17,6 +17,7 @@ class TodoForm extends React.Component {
     handleAddTask = e => {
         e.preventDefault();
         this.props.addTask(this.state.taskName)
+        this.state.taskName = ""
     }
 
     render() {
@@ -32,9 +33,9 @@ class TodoForm extends React.Component {
                         onChange={this.handleChanges}
                     />
                     <button>Add Todo</button>
-                    <button>Clear Completed</button>
                 </form>
 
+                <button onClick={this.props.clearCompleted}>Clear Completed</button>
             </div>
         )
     }

@@ -7,18 +7,25 @@ import Todo from './Todo'
 import TodoForm from './TodoForm'
 
 
-function TodoList({todoListState, addTask}) {
+function TodoList({todoListState, addTask, toggleCompleted, clearCompleted}) {
 
     return (
         <div>
             {todoListState.map(item => (
-                <Todo
-                    task={item.task}
-                    key={item.id}
-                    completed={item.completed}
-                />
+                <ul>
+                    <Todo
+                        task={item.task}
+                        key={item.id}
+                        id={item.id}
+                        completed={item.completed}
+                        toggleCompleted={toggleCompleted}
+                    />
+                </ul>
             ))}
-            <TodoForm addTask={addTask}/>
+            <TodoForm
+                addTask={addTask}
+                clearCompleted={clearCompleted}
+            />
         </div>
     )
 }

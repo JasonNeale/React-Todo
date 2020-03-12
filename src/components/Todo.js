@@ -1,10 +1,12 @@
 import React from 'react'
 
 
-function Todo({task, completed}) {
+function Todo({task, id, completed, toggleCompleted}) {
 
     return (
-        <h3>{task}</h3>
+        <li
+            className={`${completed ? "completed" : ""}`}
+            onClick={e => toggleCompleted(id)}>{task}</li>
     )
 }
 
