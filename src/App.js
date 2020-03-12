@@ -1,6 +1,5 @@
 import React from 'react';
 import TodoList from './components/TodoList'
-import './Todo.css'
 
 
 class App extends React.Component {
@@ -49,13 +48,15 @@ class App extends React.Component {
   
     render() {
         return (
-            <div>
-                <TodoList
-                    todoListState={this.state.todoListState}
-                    addTask={this.addTask}
-                    toggleCompleted={this.toggleCompleted}
-                    clearCompleted={this.clearCompleted}
-                />
+            <div className="row align-items-center page-wrapper">
+                <div className="col align-self-center list-wrapper">
+                    <TodoList
+                        todoListState={this.state.todoListState}
+                        addTask={this.addTask}
+                        toggleCompleted={this.toggleCompleted}
+                        clearCompleted={this.clearCompleted}
+                    />
+                </div>
             </div>
         )
     }
