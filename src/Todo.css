@@ -1,3 +1,12 @@
+.page-wrapper {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.list-wrapper {
+    margin: 0 auto;
+}
+
 .completed {
     text-decoration: line-through;
     font-weight: 700;
